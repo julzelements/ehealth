@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -39,13 +40,27 @@
                                     <segue destination="86b-vc-YjZ" kind="show" id="hef-Ce-VNc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCo-cS-iKC">
+                                <rect key="frame" x="154" y="460" width="66" height="30"/>
+                                <state key="normal" title="Play Note"/>
+                                <connections>
+                                    <action selector="playbackNote:" destination="MQe-5y-Es0" eventType="touchUpInside" id="eUk-h5-HtE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azw-oF-AW0">
+                                <rect key="frame" x="164" y="498" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Azw-oF-AW0" firstAttribute="top" secondItem="iCo-cS-iKC" secondAttribute="bottom" constant="8" id="23O-G9-7oN"/>
                             <constraint firstItem="e5W-Gh-BEQ" firstAttribute="leading" secondItem="2Y6-wy-KdW" secondAttribute="leadingMargin" id="S2I-aN-nQq"/>
                             <constraint firstItem="fAQ-d2-wB8" firstAttribute="bottom" secondItem="Ieq-Yv-LoS" secondAttribute="bottom" constant="20" id="TTd-f2-10D"/>
                             <constraint firstItem="e5W-Gh-BEQ" firstAttribute="top" secondItem="sXc-6O-ZQU" secondAttribute="bottom" id="ZXv-WK-Mk7"/>
                             <constraint firstItem="Ieq-Yv-LoS" firstAttribute="centerX" secondItem="fAQ-d2-wB8" secondAttribute="centerX" id="cvN-qL-k2O"/>
+                            <constraint firstItem="iCo-cS-iKC" firstAttribute="centerX" secondItem="fAQ-d2-wB8" secondAttribute="centerX" id="g5f-K3-UO3"/>
+                            <constraint firstItem="Ieq-Yv-LoS" firstAttribute="top" secondItem="iCo-cS-iKC" secondAttribute="bottom" constant="127" id="orp-m9-EwQ"/>
                             <constraint firstItem="e5W-Gh-BEQ" firstAttribute="trailing" secondItem="2Y6-wy-KdW" secondAttribute="trailingMargin" id="zML-Zo-1QB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fAQ-d2-wB8"/>
@@ -58,6 +73,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9l-ta-vRu" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1097" y="-153"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ewi-KY-WeO">
+            <objects>
+                <viewController id="j5K-UO-xQb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jc8-8m-QqZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="PT9-2i-1ZY">
+                                <rect key="frame" x="16" y="20" width="343" height="258"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="258" id="Osq-Ri-hiU"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Kh-T2-mBX">
+                                <rect key="frame" x="16" y="286" width="343" height="361"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XIe-BJ-r8L" firstAttribute="trailing" secondItem="7Kh-T2-mBX" secondAttribute="trailing" constant="16" id="B1g-sv-AcI"/>
+                            <constraint firstItem="PT9-2i-1ZY" firstAttribute="top" secondItem="XIe-BJ-r8L" secondAttribute="top" id="Pnd-Da-wE2"/>
+                            <constraint firstItem="XIe-BJ-r8L" firstAttribute="trailing" secondItem="PT9-2i-1ZY" secondAttribute="trailing" constant="16" id="T8Z-L0-2U3"/>
+                            <constraint firstItem="7Kh-T2-mBX" firstAttribute="top" secondItem="PT9-2i-1ZY" secondAttribute="bottom" constant="8" id="YZC-Ck-GF2"/>
+                            <constraint firstItem="PT9-2i-1ZY" firstAttribute="leading" secondItem="XIe-BJ-r8L" secondAttribute="leading" constant="16" id="a2C-V3-b9O"/>
+                            <constraint firstItem="XIe-BJ-r8L" firstAttribute="bottom" secondItem="7Kh-T2-mBX" secondAttribute="bottom" constant="20" id="dPR-2z-m0k"/>
+                            <constraint firstItem="PT9-2i-1ZY" firstAttribute="centerX" secondItem="XIe-BJ-r8L" secondAttribute="centerX" id="ncJ-ym-Ny6"/>
+                            <constraint firstItem="7Kh-T2-mBX" firstAttribute="leading" secondItem="XIe-BJ-r8L" secondAttribute="leading" constant="16" id="txa-OM-Ihm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XIe-BJ-r8L"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xdi-z7-huy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="-153.37331334332833"/>
         </scene>
         <!--Record-->
         <scene sceneID="q8w-gb-5qR">
@@ -134,4 +186,7 @@
             <point key="canvasLocation" x="156" y="-153.37331334332833"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="357" height="192"/>
+    </resources>
 </document>

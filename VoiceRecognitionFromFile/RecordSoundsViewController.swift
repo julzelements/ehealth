@@ -46,6 +46,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     @IBOutlet weak var recordButton: UIButton!

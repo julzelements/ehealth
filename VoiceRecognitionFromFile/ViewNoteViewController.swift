@@ -8,12 +8,16 @@
 
 import UIKit
 import Speech
+import AVFoundation
 
 class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     var testString: String!
+    var audioPlayer: AVAudioPlayer!
     var recordedAudio: RecordedAudio!
     var result: SFSpeechRecognitionResult!
+    var audioEngine: AVAudioEngine!
+    var audioFile: AVAudioFile!
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
     
@@ -22,8 +26,15 @@ class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("here is my audio")
+        //        Sets the default device output to the loudspeaker (instead of the handset)
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, with: .defaultToSpeaker)
+        
         print(recordedAudio.filePathURL)
         print(testString)
+        
+        audioPlayer = try! AVAudioPlayer(contentsOf: recordedAudio.filePathURL as URL)
+        audioEngine = AVAudioEngine()
+        try! audioFile = AVAudioFile(forReading: recordedAudio.filePathURL as URL)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,6 +124,24 @@ class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
                 }
             }
         }
+    @IBAction func playbackNote(_ sender: Any) {
+        stopAll()
+        playAtSpeed(speed: 1.0)
+    }
+    
+    func stopAll() {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+    }
+    
+    func playAtSpeed(speed: Float) {
+        stopAll()
+        audioPlayer.enableRate = true
+        audioPlayer.rate = speed
+        audioPlayer.play()
+    }
+    
     }
 
 

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ViewNoteViewController
 //  VoiceRecognitionFromFile
 //
 //  Created by Julian Scharf on 20/9/17.
@@ -9,9 +9,10 @@
 import UIKit
 import Speech
 
-class ViewController: UIViewController, SFSpeechRecognizerDelegate {
+class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
     
-    var audioURL: URL!
+    var testString: String!
+    var recordedAudio: RecordedAudio!
     var result: SFSpeechRecognitionResult!
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
@@ -20,8 +21,15 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        audioURL = Bundle.main.url(forResource: "patientNotesRecording", withExtension: "wav")
-        recognizeFile(url: audioURL)
+        print("here is my audio")
+        print(recordedAudio.filePathURL)
+        print(testString)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let audioURL = Bundle.main.url(forResource: "patientNotesRecording", withExtension: "wav")
+//        recognizeFile(url: audioURL!)
+        recognizeFile(url: recordedAudio.filePathURL as URL!)
     }
 
     

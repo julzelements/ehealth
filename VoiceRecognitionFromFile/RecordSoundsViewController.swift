@@ -15,6 +15,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     var audioRecorder:AVAudioRecorder!
     var recordedAudio:RecordedAudio!
     var recordingIsPaused: Bool = false
+    var testString: String!
     
     enum DisplayState {
         case notRecording
@@ -77,6 +78,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if(flag) {
             recordedAudio = RecordedAudio(audioFilePathURL: recorder.url as NSURL, audioTitle: recorder.url.lastPathComponent)
+                print(recordedAudio.filePathURL)
+                print("recording was successful")
+            performSegue(withIdentifier: "showNotes", sender: nil)            
         } else {
             print("Recording was not successful")
         }
@@ -94,6 +98,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {        
+        let destinationViewController = segue.destination as! ViewNoteViewController
+        if let recording = self.recordedAudio {
+            destinationViewController.recordedAudio = recording
+        }
     }
     
 }

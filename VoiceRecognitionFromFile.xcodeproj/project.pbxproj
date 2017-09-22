@@ -10,7 +10,7 @@
 		EC8C73E61F749EE4009CE983 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8C73E51F749EE4009CE983 /* RecordedAudio.swift */; };
 		EC8C73E81F749F0F009CE983 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8C73E71F749F0F009CE983 /* RecordSoundsViewController.swift */; };
 		EC9592D01F725734007F41B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9592CF1F725734007F41B8 /* AppDelegate.swift */; };
-		EC9592D21F725734007F41B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9592D11F725734007F41B8 /* ViewController.swift */; };
+		EC9592D21F725734007F41B8 /* ViewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9592D11F725734007F41B8 /* ViewNoteViewController.swift */; };
 		EC9592D51F725734007F41B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9592D31F725734007F41B8 /* Main.storyboard */; };
 		EC9592D71F725734007F41B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9592D61F725734007F41B8 /* Assets.xcassets */; };
 		EC9592DA1F725734007F41B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9592D81F725734007F41B8 /* LaunchScreen.storyboard */; };
@@ -33,7 +33,7 @@
 		EC8C73E71F749F0F009CE983 /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
 		EC9592CC1F725734007F41B8 /* VoiceRecognitionFromFile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceRecognitionFromFile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9592CF1F725734007F41B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC9592D11F725734007F41B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC9592D11F725734007F41B8 /* ViewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNoteViewController.swift; sourceTree = "<group>"; };
 		EC9592D41F725734007F41B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC9592D61F725734007F41B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC9592D91F725734007F41B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 				EC8C73E71F749F0F009CE983 /* RecordSoundsViewController.swift */,
 				EC8C73E51F749EE4009CE983 /* RecordedAudio.swift */,
 				EC9592CF1F725734007F41B8 /* AppDelegate.swift */,
-				EC9592D11F725734007F41B8 /* ViewController.swift */,
+				EC9592D11F725734007F41B8 /* ViewNoteViewController.swift */,
 				EC9592D31F725734007F41B8 /* Main.storyboard */,
 				EC9592D61F725734007F41B8 /* Assets.xcassets */,
 				EC9592D81F725734007F41B8 /* LaunchScreen.storyboard */,
@@ -218,7 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC8C73E61F749EE4009CE983 /* RecordedAudio.swift in Sources */,
-				EC9592D21F725734007F41B8 /* ViewController.swift in Sources */,
+				EC9592D21F725734007F41B8 /* ViewNoteViewController.swift in Sources */,
 				EC8C73E81F749F0F009CE983 /* RecordSoundsViewController.swift in Sources */,
 				EC9592D01F725734007F41B8 /* AppDelegate.swift in Sources */,
 			);
@@ -376,6 +376,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RR2B862M79;
 				INFOPLIST_FILE = VoiceRecognitionFromFile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.julzelements.VoiceRecognitionFromFile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -391,6 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RR2B862M79;
 				INFOPLIST_FILE = VoiceRecognitionFromFile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.julzelements.VoiceRecognitionFromFile;
 				PRODUCT_NAME = "$(TARGET_NAME)";

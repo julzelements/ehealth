@@ -12,10 +12,12 @@ class RecordedAudio {
   
   var filePathURL: NSURL!
   var title: String!
+var timeRecorded: Date!
   
   init(audioFilePathURL: NSURL, audioTitle: String) {
     filePathURL = audioFilePathURL
     title = audioTitle
+    timeRecorded = Date()
   }
   
 }

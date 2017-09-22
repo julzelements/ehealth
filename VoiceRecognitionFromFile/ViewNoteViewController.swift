@@ -12,6 +12,7 @@ import AVFoundation
 
 class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
     
+    @IBOutlet weak var timeStampLabel: UILabel!
     var testString: String!
     var audioPlayer: AVAudioPlayer!
     var recordedAudio: RecordedAudio!
@@ -35,6 +36,8 @@ class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
         audioPlayer = try! AVAudioPlayer(contentsOf: recordedAudio.filePathURL as URL)
         audioEngine = AVAudioEngine()
         try! audioFile = AVAudioFile(forReading: recordedAudio.filePathURL as URL)
+        
+        timeStampLabel.text = getFormattedDate(date: recordedAudio.timeRecorded)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -140,6 +143,13 @@ class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
         audioPlayer.enableRate = true
         audioPlayer.rate = speed
         audioPlayer.play()
+    }
+    
+    func getFormattedDate(date: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd yyyy, hh:mm:ss"
+        
+        return (dateFormatter.string(from: date))
     }
     
     }

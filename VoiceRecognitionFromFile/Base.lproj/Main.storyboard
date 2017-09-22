@@ -47,20 +47,23 @@
                                     <action selector="playbackNote:" destination="MQe-5y-Es0" eventType="touchUpInside" id="eUk-h5-HtE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azw-oF-AW0">
-                                <rect key="frame" x="164" y="498" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Stamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dS-eO-Gxn">
+                                <rect key="frame" x="141" y="588" width="92" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Azw-oF-AW0" firstAttribute="top" secondItem="iCo-cS-iKC" secondAttribute="bottom" constant="8" id="23O-G9-7oN"/>
                             <constraint firstItem="e5W-Gh-BEQ" firstAttribute="leading" secondItem="2Y6-wy-KdW" secondAttribute="leadingMargin" id="S2I-aN-nQq"/>
                             <constraint firstItem="fAQ-d2-wB8" firstAttribute="bottom" secondItem="Ieq-Yv-LoS" secondAttribute="bottom" constant="20" id="TTd-f2-10D"/>
                             <constraint firstItem="e5W-Gh-BEQ" firstAttribute="top" secondItem="sXc-6O-ZQU" secondAttribute="bottom" id="ZXv-WK-Mk7"/>
                             <constraint firstItem="Ieq-Yv-LoS" firstAttribute="centerX" secondItem="fAQ-d2-wB8" secondAttribute="centerX" id="cvN-qL-k2O"/>
                             <constraint firstItem="iCo-cS-iKC" firstAttribute="centerX" secondItem="fAQ-d2-wB8" secondAttribute="centerX" id="g5f-K3-UO3"/>
                             <constraint firstItem="Ieq-Yv-LoS" firstAttribute="top" secondItem="iCo-cS-iKC" secondAttribute="bottom" constant="127" id="orp-m9-EwQ"/>
+                            <constraint firstItem="Ieq-Yv-LoS" firstAttribute="top" secondItem="1dS-eO-Gxn" secondAttribute="bottom" constant="8" symbolic="YES" id="uzc-uh-b3M"/>
+                            <constraint firstItem="1dS-eO-Gxn" firstAttribute="centerX" secondItem="Ieq-Yv-LoS" secondAttribute="centerX" id="wO2-BH-Ogd"/>
                             <constraint firstItem="e5W-Gh-BEQ" firstAttribute="trailing" secondItem="2Y6-wy-KdW" secondAttribute="trailingMargin" id="zML-Zo-1QB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fAQ-d2-wB8"/>
@@ -68,6 +71,7 @@
                     <tabBarItem key="tabBarItem" title="View Notes" id="rSW-LI-fUg"/>
                     <connections>
                         <outlet property="textView" destination="e5W-Gh-BEQ" id="S8d-oA-iHe"/>
+                        <outlet property="timeStampLabel" destination="1dS-eO-Gxn" id="XUj-9o-gd1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9l-ta-vRu" sceneMemberID="firstResponder"/>

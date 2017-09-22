@@ -22,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e5W-Gh-BEQ">
-                                <rect key="frame" x="16" y="20" width="343" height="589"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e5W-Gh-BEQ">
+                                <rect key="frame" x="16" y="20" width="343" height="282"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -40,7 +40,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ej4-Ld-qny" firstAttribute="leading" secondItem="2Y6-wy-KdW" secondAttribute="leadingMargin" id="3eP-6M-55P"/>
-                            <constraint firstItem="ej4-Ld-qny" firstAttribute="top" secondItem="e5W-Gh-BEQ" secondAttribute="bottom" constant="8" id="ALU-td-uR8"/>
                             <constraint firstItem="ej4-Ld-qny" firstAttribute="trailing" secondItem="2Y6-wy-KdW" secondAttribute="trailingMargin" id="IuZ-jJ-gLo"/>
                             <constraint firstItem="e5W-Gh-BEQ" firstAttribute="leading" secondItem="2Y6-wy-KdW" secondAttribute="leadingMargin" id="S2I-aN-nQq"/>
                             <constraint firstItem="9fW-MR-dWL" firstAttribute="top" secondItem="ej4-Ld-qny" secondAttribute="bottom" constant="20" id="T0W-WC-UvR"/>
@@ -56,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9l-ta-vRu" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230" y="-123"/>
+            <point key="canvasLocation" x="530" y="-153"/>
         </scene>
     </scenes>
 </document>

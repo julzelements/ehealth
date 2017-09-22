@@ -12,6 +12,8 @@ import Speech
 class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     var audioURL: URL!
+    var result: SFSpeechRecognitionResult!
+    
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
     
     @IBOutlet var textView : UITextView!
@@ -43,20 +45,35 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                     return
             }
             if result.isFinal {
-                let bestTranscription = result.bestTranscription
-                let string = bestTranscription.formattedString
-                let segments = bestTranscription.segments
-                let uncertainRanges = self.getUncertainRanges(segments: segments)
-                
-                
-                let colouredText = self.makeTextRed(text: string, ranges: uncertainRanges)
-                
-                self.textView.attributedText = colouredText
+                self.result = result
+                let formattedText = self.formatResult(result: result)
+                self.presentTextOnTextView(text: formattedText, textView: self.textView)
+                self.selectRangeInTextView(result: result, textView: self.textView)
             }
         }
     }
     
-    func getUncertainRanges(segments: [SFTranscriptionSegment]) -> [NSRange]{
+    func selectRangeInTextView(result: SFSpeechRecognitionResult, textView: UITextView) {
+        let uncertainRanges = getUncertainRanges(segments: result.bestTranscription.segments, confidenceCutoff: 0.5)
+        if !uncertainRanges.isEmpty {
+            textView.selectedRange = uncertainRanges[0]
+        }
+    }
+    
+    func presentTextOnTextView(text: NSMutableAttributedString, textView: UITextView) {
+        textView.attributedText = text
+    }
+
+    func formatResult(result: SFSpeechRecognitionResult) -> NSMutableAttributedString {
+        let bestTranscription = result.bestTranscription
+        let string = bestTranscription.formattedString
+        let segments = bestTranscription.segments[0].
+        let uncertainRanges = getUncertainRanges(segments: segments, confidenceCutoff: 0.5)
+        let colouredText = makeTextRed(text: string, ranges: uncertainRanges)
+        return colouredText
+    }
+    
+    func getUncertainRanges(segments: [SFTranscriptionSegment], confidenceCutoff: Double) -> [NSRange] {
         var ranges = [NSRange]()
         for segment in segments {
             if segment.confidence < 0.5 {

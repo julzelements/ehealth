@@ -67,7 +67,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     func formatResult(result: SFSpeechRecognitionResult) -> NSMutableAttributedString {
         let bestTranscription = result.bestTranscription
         let string = bestTranscription.formattedString
-        let segments = bestTranscription.segments[0].
+        let segments = bestTranscription.segments
         let uncertainRanges = getUncertainRanges(segments: segments, confidenceCutoff: 0.5)
         let colouredText = makeTextRed(text: string, ranges: uncertainRanges)
         return colouredText

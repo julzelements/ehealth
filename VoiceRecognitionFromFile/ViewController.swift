@@ -18,8 +18,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     @IBOutlet var textView : UITextView!
     
-    @IBOutlet var recordButton : UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         audioURL = Bundle.main.url(forResource: "patientNotesRecording", withExtension: "wav")
@@ -47,8 +45,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             if result.isFinal {
                 self.result = result
                 let formattedText = self.formatResult(result: result)
-                self.presentTextOnTextView(text: formattedText, textView: self.textView)
-                self.selectRangeInTextView(result: result, textView: self.textView)
+                self.textView.attributedText = formattedText
+                print(formattedText)
+                print("recognition complete")
+//                self.presentTextOnTextView(text: formattedText, textView: self.textView)
+//                self.selectRangeInTextView(result: result, textView: self.textView)
             }
         }
     }
@@ -100,24 +101,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
              operation to the main queue to update the record button's state.
              */
             OperationQueue.main.addOperation {
-                switch authStatus {
-                case .authorized:
-                    self.recordButton.isEnabled = true
-                    
-                case .denied:
-                    self.recordButton.isEnabled = false
-                    self.recordButton.setTitle("User denied access to speech recognition", for: .disabled)
-                    
-                case .restricted:
-                    self.recordButton.isEnabled = false
-                    self.recordButton.setTitle("Speech recognition restricted on this device", for: .disabled)
-                    
-                case .notDetermined:
-                    self.recordButton.isEnabled = false
-                    self.recordButton.setTitle("Speech recognition not yet authorized", for: .disabled)
+
                 }
             }
         }
     }
-}
+
 

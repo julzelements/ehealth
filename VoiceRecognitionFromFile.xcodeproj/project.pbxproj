@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EC30B4561F787A1E00744390 /* PatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30B4551F787A1E00744390 /* PatientViewController.swift */; };
-		EC30B4581F78827100744390 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30B4571F78827100744390 /* NotesTableViewController.swift */; };
-		EC30B4871F788C0F00744390 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30B4861F788C0F00744390 /* Patient.swift */; };
 		EC8C73E61F749EE4009CE983 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8C73E51F749EE4009CE983 /* RecordedAudio.swift */; };
 		EC8C73E81F749F0F009CE983 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8C73E71F749F0F009CE983 /* RecordSoundsViewController.swift */; };
 		EC9592D01F725734007F41B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9592CF1F725734007F41B8 /* AppDelegate.swift */; };
@@ -19,6 +17,8 @@
 		EC9592DA1F725734007F41B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9592D81F725734007F41B8 /* LaunchScreen.storyboard */; };
 		EC9592E51F725734007F41B8 /* VoiceRecognitionFromFileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9592E41F725734007F41B8 /* VoiceRecognitionFromFileTests.swift */; };
 		EC9592F11F725C95007F41B8 /* patientNotesRecording.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC9592F01F725C95007F41B8 /* patientNotesRecording.wav */; };
+		ECB35FC21F78A886001699DE /* PatientNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB35FC11F78A886001699DE /* PatientNoteTableViewCell.swift */; };
+		ECB35FF71F78C4E5001699DE /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB35FF61F78C4E5001699DE /* RecordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,8 +33,6 @@
 
 /* Begin PBXFileReference section */
 		EC30B4551F787A1E00744390 /* PatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientViewController.swift; sourceTree = "<group>"; };
-		EC30B4571F78827100744390 /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
-		EC30B4861F788C0F00744390 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		EC8C73E51F749EE4009CE983 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 		EC8C73E71F749F0F009CE983 /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
 		EC9592CC1F725734007F41B8 /* VoiceRecognitionFromFile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceRecognitionFromFile.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +46,8 @@
 		EC9592E41F725734007F41B8 /* VoiceRecognitionFromFileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecognitionFromFileTests.swift; sourceTree = "<group>"; };
 		EC9592E61F725735007F41B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC9592F01F725C95007F41B8 /* patientNotesRecording.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = patientNotesRecording.wav; sourceTree = "<group>"; };
+		ECB35FC11F78A886001699DE /* PatientNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientNoteTableViewCell.swift; sourceTree = "<group>"; };
+		ECB35FF61F78C4E5001699DE /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,18 +68,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EC30B4851F788BE500744390 /* DataStructure */ = {
-			isa = PBXGroup;
-			children = (
-				EC30B4861F788C0F00744390 /* Patient.swift */,
-			);
-			path = DataStructure;
-			sourceTree = "<group>";
-		};
 		EC9592C31F725734007F41B8 = {
 			isa = PBXGroup;
 			children = (
-				EC30B4851F788BE500744390 /* DataStructure */,
+				ECB35FF61F78C4E5001699DE /* RecordViewController.swift */,
+				ECB35FC51F78AE64001699DE /* PatientView */,
 				EC9592EF1F725C7B007F41B8 /* recordings */,
 				EC9592CE1F725734007F41B8 /* VoiceRecognitionFromFile */,
 				EC9592E31F725734007F41B8 /* VoiceRecognitionFromFileTests */,
@@ -107,8 +100,6 @@
 				EC9592D61F725734007F41B8 /* Assets.xcassets */,
 				EC9592D81F725734007F41B8 /* LaunchScreen.storyboard */,
 				EC9592DB1F725734007F41B8 /* Info.plist */,
-				EC30B4551F787A1E00744390 /* PatientViewController.swift */,
-				EC30B4571F78827100744390 /* NotesTableViewController.swift */,
 			);
 			path = VoiceRecognitionFromFile;
 			sourceTree = "<group>";
@@ -128,6 +119,15 @@
 				EC9592F01F725C95007F41B8 /* patientNotesRecording.wav */,
 			);
 			path = recordings;
+			sourceTree = "<group>";
+		};
+		ECB35FC51F78AE64001699DE /* PatientView */ = {
+			isa = PBXGroup;
+			children = (
+				EC30B4551F787A1E00744390 /* PatientViewController.swift */,
+				ECB35FC11F78A886001699DE /* PatientNoteTableViewCell.swift */,
+			);
+			path = PatientView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,10 +237,10 @@
 				EC8C73E61F749EE4009CE983 /* RecordedAudio.swift in Sources */,
 				EC9592D21F725734007F41B8 /* ViewNoteViewController.swift in Sources */,
 				EC8C73E81F749F0F009CE983 /* RecordSoundsViewController.swift in Sources */,
+				ECB35FF71F78C4E5001699DE /* RecordViewController.swift in Sources */,
 				EC9592D01F725734007F41B8 /* AppDelegate.swift in Sources */,
-				EC30B4871F788C0F00744390 /* Patient.swift in Sources */,
 				EC30B4561F787A1E00744390 /* PatientViewController.swift in Sources */,
-				EC30B4581F78827100744390 /* NotesTableViewController.swift in Sources */,
+				ECB35FC21F78A886001699DE /* PatientNoteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

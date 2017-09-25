@@ -70,6 +70,7 @@ class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
                 self.textView.attributedText = formattedText
                 print(formattedText)
                 print("recognition complete")
+                print(result)
 //                self.presentTextOnTextView(text: formattedText, textView: self.textView)
 //                self.selectRangeInTextView(result: result, textView: self.textView)
             }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC30B4561F787A1E00744390 /* PatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30B4551F787A1E00744390 /* PatientViewController.swift */; };
+		EC30B4581F78827100744390 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30B4571F78827100744390 /* NotesTableViewController.swift */; };
+		EC30B4871F788C0F00744390 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30B4861F788C0F00744390 /* Patient.swift */; };
 		EC8C73E61F749EE4009CE983 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8C73E51F749EE4009CE983 /* RecordedAudio.swift */; };
 		EC8C73E81F749F0F009CE983 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8C73E71F749F0F009CE983 /* RecordSoundsViewController.swift */; };
 		EC9592D01F725734007F41B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9592CF1F725734007F41B8 /* AppDelegate.swift */; };
@@ -29,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC30B4551F787A1E00744390 /* PatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientViewController.swift; sourceTree = "<group>"; };
+		EC30B4571F78827100744390 /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
+		EC30B4861F788C0F00744390 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		EC8C73E51F749EE4009CE983 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 		EC8C73E71F749F0F009CE983 /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
 		EC9592CC1F725734007F41B8 /* VoiceRecognitionFromFile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceRecognitionFromFile.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,9 +68,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC30B4851F788BE500744390 /* DataStructure */ = {
+			isa = PBXGroup;
+			children = (
+				EC30B4861F788C0F00744390 /* Patient.swift */,
+			);
+			path = DataStructure;
+			sourceTree = "<group>";
+		};
 		EC9592C31F725734007F41B8 = {
 			isa = PBXGroup;
 			children = (
+				EC30B4851F788BE500744390 /* DataStructure */,
 				EC9592EF1F725C7B007F41B8 /* recordings */,
 				EC9592CE1F725734007F41B8 /* VoiceRecognitionFromFile */,
 				EC9592E31F725734007F41B8 /* VoiceRecognitionFromFileTests */,
@@ -92,6 +107,8 @@
 				EC9592D61F725734007F41B8 /* Assets.xcassets */,
 				EC9592D81F725734007F41B8 /* LaunchScreen.storyboard */,
 				EC9592DB1F725734007F41B8 /* Info.plist */,
+				EC30B4551F787A1E00744390 /* PatientViewController.swift */,
+				EC30B4571F78827100744390 /* NotesTableViewController.swift */,
 			);
 			path = VoiceRecognitionFromFile;
 			sourceTree = "<group>";
@@ -221,6 +238,9 @@
 				EC9592D21F725734007F41B8 /* ViewNoteViewController.swift in Sources */,
 				EC8C73E81F749F0F009CE983 /* RecordSoundsViewController.swift in Sources */,
 				EC9592D01F725734007F41B8 /* AppDelegate.swift in Sources */,
+				EC30B4871F788C0F00744390 /* Patient.swift in Sources */,
+				EC30B4561F787A1E00744390 /* PatientViewController.swift in Sources */,
+				EC30B4581F78827100744390 /* NotesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

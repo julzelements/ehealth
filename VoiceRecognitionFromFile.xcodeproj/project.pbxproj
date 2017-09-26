@@ -19,6 +19,7 @@
 		EC9592F11F725C95007F41B8 /* patientNotesRecording.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC9592F01F725C95007F41B8 /* patientNotesRecording.wav */; };
 		ECB35FC21F78A886001699DE /* PatientNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB35FC11F78A886001699DE /* PatientNoteTableViewCell.swift */; };
 		ECB35FF71F78C4E5001699DE /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB35FF61F78C4E5001699DE /* RecordViewController.swift */; };
+		ECF3D5621F7A044300DA0547 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3D5611F7A044300DA0547 /* StopWatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		EC9592F01F725C95007F41B8 /* patientNotesRecording.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = patientNotesRecording.wav; sourceTree = "<group>"; };
 		ECB35FC11F78A886001699DE /* PatientNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientNoteTableViewCell.swift; sourceTree = "<group>"; };
 		ECB35FF61F78C4E5001699DE /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		ECF3D5611F7A044300DA0547 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		EC9592C31F725734007F41B8 = {
 			isa = PBXGroup;
 			children = (
+				ECF3D5611F7A044300DA0547 /* StopWatch.swift */,
 				ECB35FF61F78C4E5001699DE /* RecordViewController.swift */,
 				ECB35FC51F78AE64001699DE /* PatientView */,
 				EC9592EF1F725C7B007F41B8 /* recordings */,
@@ -241,6 +244,7 @@
 				EC9592D01F725734007F41B8 /* AppDelegate.swift in Sources */,
 				EC30B4561F787A1E00744390 /* PatientViewController.swift in Sources */,
 				ECB35FC21F78A886001699DE /* PatientNoteTableViewCell.swift in Sources */,
+				ECF3D5621F7A044300DA0547 /* StopWatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

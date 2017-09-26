@@ -19,7 +19,7 @@ class PatientViewController: UIViewController, UITableViewDataSource, UITableVie
 
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

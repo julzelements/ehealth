@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j5K-UO-xQb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DVv-wC-BTL">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -240,28 +240,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yY-VB-pJA">
-                                <rect key="frame" x="16" y="438" width="288" height="65"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Le-iw-42R">
-                                        <rect key="frame" x="0.0" y="0.0" width="96" height="65"/>
-                                        <state key="normal" title="Play"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nay-Ga-MFL">
-                                        <rect key="frame" x="96" y="0.0" width="96" height="65"/>
-                                        <state key="normal" title="Rec_Pause"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47h-kW-1kE">
-                                        <rect key="frame" x="192" y="0.0" width="96" height="65"/>
-                                        <state key="normal" title="Stop"/>
-                                    </button>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Le-iw-42R">
+                                <rect key="frame" x="16" y="449" width="74" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="Eti-r6-Yc0"/>
-                                    <constraint firstItem="5Le-iw-42R" firstAttribute="width" secondItem="47h-kW-1kE" secondAttribute="width" id="LA9-3f-cEo"/>
-                                    <constraint firstItem="5Le-iw-42R" firstAttribute="width" secondItem="nay-Ga-MFL" secondAttribute="width" id="TvX-JW-Edg"/>
+                                    <constraint firstAttribute="height" constant="70" id="lLe-B8-0HK"/>
                                 </constraints>
-                            </stackView>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playRecording:" destination="DVv-wC-BTL" eventType="touchUpInside" id="O55-Ah-QMM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nay-Ga-MFL">
+                                <rect key="frame" x="123" y="449" width="74" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="vrr-cQ-vCh"/>
+                                </constraints>
+                                <state key="normal" title="Record"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47h-kW-1kE">
+                                <rect key="frame" x="230" y="449" width="74" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="i0A-EP-S39"/>
+                                </constraints>
+                                <state key="normal" title="Transcribe"/>
+                                <connections>
+                                    <action selector="transcribeRecording:" destination="DVv-wC-BTL" eventType="touchUpInside" id="iG1-5m-gWD"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="g2y-vx-EL9">
                                 <rect key="frame" x="0.0" y="234" width="320" height="100"/>
                                 <constraints>
@@ -269,28 +274,26 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Seu-nX-10V">
-                                <rect key="frame" x="98.5" y="342" width="123.5" height="35"/>
+                                <rect key="frame" x="98" y="342" width="124" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sex-S6-xqk">
-                                <rect key="frame" x="50.5" y="197" width="219.5" height="29"/>
-                                <string key="text">Tap the button to start recording.
-Notes will be automatically transcribed</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold the button to record" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sex-S6-xqk">
+                                <rect key="frame" x="88" y="211.5" width="144" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Fi-fk-zzc">
-                                <rect key="frame" x="16" y="73" width="288" height="116"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="16" y="73" width="288" height="130.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBQ-yc-OzA">
                                 <rect key="frame" x="0.0" y="20" width="320" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record a Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nq-ek-c5J">
-                                        <rect key="frame" x="105.5" y="13" width="109.5" height="20.5"/>
+                                        <rect key="frame" x="105" y="12" width="110" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -304,7 +307,10 @@ Notes will be automatically transcribed</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9k-EZ-vSb">
-                                <rect key="frame" x="133.5" y="511" width="54.5" height="20.5"/>
+                                <rect key="frame" x="133" y="527" width="55" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vnr-fI-glk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -312,31 +318,46 @@ Notes will be automatically transcribed</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="47h-kW-1kE" firstAttribute="leading" secondItem="nay-Ga-MFL" secondAttribute="trailing" constant="33" id="2Ho-sh-X1s"/>
+                            <constraint firstItem="2AN-KA-EWX" firstAttribute="bottom" secondItem="d9k-EZ-vSb" secondAttribute="bottom" constant="20" id="3gL-eM-G7o"/>
                             <constraint firstItem="2AN-KA-EWX" firstAttribute="trailing" secondItem="g2y-vx-EL9" secondAttribute="trailing" id="DFJ-L7-x0M"/>
                             <constraint firstItem="Seu-nX-10V" firstAttribute="centerX" secondItem="2AN-KA-EWX" secondAttribute="centerX" id="DyN-Lu-ial"/>
                             <constraint firstItem="g2y-vx-EL9" firstAttribute="centerX" secondItem="brd-54-VpK" secondAttribute="centerX" id="Hyn-e6-BwM"/>
                             <constraint firstItem="Seu-nX-10V" firstAttribute="top" secondItem="g2y-vx-EL9" secondAttribute="bottom" constant="8" symbolic="YES" id="NZv-BD-0DC"/>
                             <constraint firstItem="g2y-vx-EL9" firstAttribute="centerY" secondItem="brd-54-VpK" secondAttribute="centerY" id="RRb-Gm-Nxz"/>
                             <constraint firstItem="0Fi-fk-zzc" firstAttribute="leading" secondItem="2AN-KA-EWX" secondAttribute="leading" constant="16" id="TTS-w6-LpF"/>
-                            <constraint firstItem="d9k-EZ-vSb" firstAttribute="centerX" secondItem="2AN-KA-EWX" secondAttribute="centerX" id="U30-QD-uCm"/>
-                            <constraint firstItem="2AN-KA-EWX" firstAttribute="trailing" secondItem="4yY-VB-pJA" secondAttribute="trailing" constant="16" id="UZa-Cz-G6j"/>
-                            <constraint firstItem="d9k-EZ-vSb" firstAttribute="top" secondItem="nay-Ga-MFL" secondAttribute="bottom" constant="8" id="W6h-dC-260"/>
-                            <constraint firstItem="4yY-VB-pJA" firstAttribute="leading" secondItem="2AN-KA-EWX" secondAttribute="leading" constant="16" id="Zqx-N3-P2r"/>
                             <constraint firstItem="2AN-KA-EWX" firstAttribute="top" secondItem="lBQ-yc-OzA" secondAttribute="top" id="aJe-O7-BZY"/>
                             <constraint firstItem="g2y-vx-EL9" firstAttribute="leading" secondItem="2AN-KA-EWX" secondAttribute="leading" id="dtD-yE-ayt"/>
+                            <constraint firstItem="2AN-KA-EWX" firstAttribute="trailing" secondItem="47h-kW-1kE" secondAttribute="trailing" constant="16" id="e6p-Hg-i4y"/>
                             <constraint firstItem="Sex-S6-xqk" firstAttribute="top" secondItem="0Fi-fk-zzc" secondAttribute="bottom" constant="8" id="fgi-Ri-hFY"/>
-                            <constraint firstItem="4yY-VB-pJA" firstAttribute="centerX" secondItem="brd-54-VpK" secondAttribute="centerX" id="iT9-6N-UIW"/>
+                            <constraint firstItem="5Le-iw-42R" firstAttribute="centerY" secondItem="nay-Ga-MFL" secondAttribute="centerY" id="gK1-vB-HE8"/>
                             <constraint firstItem="0Fi-fk-zzc" firstAttribute="centerX" secondItem="2AN-KA-EWX" secondAttribute="centerX" id="iUa-qU-o60"/>
                             <constraint firstItem="2AN-KA-EWX" firstAttribute="trailing" secondItem="lBQ-yc-OzA" secondAttribute="trailing" id="kdr-gu-39l"/>
                             <constraint firstItem="0Fi-fk-zzc" firstAttribute="top" secondItem="lBQ-yc-OzA" secondAttribute="bottom" constant="8" symbolic="YES" id="leJ-nm-3QJ"/>
                             <constraint firstItem="lBQ-yc-OzA" firstAttribute="leading" secondItem="2AN-KA-EWX" secondAttribute="leading" id="m8g-aO-i7C"/>
+                            <constraint firstItem="nay-Ga-MFL" firstAttribute="width" secondItem="5Le-iw-42R" secondAttribute="width" id="miy-cL-9uE"/>
+                            <constraint firstItem="47h-kW-1kE" firstAttribute="width" secondItem="5Le-iw-42R" secondAttribute="width" id="nnd-Pr-D6q"/>
+                            <constraint firstItem="d9k-EZ-vSb" firstAttribute="top" secondItem="nay-Ga-MFL" secondAttribute="bottom" constant="8" id="oqA-1V-m6y"/>
                             <constraint firstItem="2AN-KA-EWX" firstAttribute="trailing" secondItem="0Fi-fk-zzc" secondAttribute="trailing" constant="16" id="rJP-Qb-PNE"/>
                             <constraint firstItem="Sex-S6-xqk" firstAttribute="centerX" secondItem="2AN-KA-EWX" secondAttribute="centerX" id="rjh-D4-PiA"/>
-                            <constraint firstItem="2AN-KA-EWX" firstAttribute="bottom" secondItem="4yY-VB-pJA" secondAttribute="bottom" constant="65" id="rpk-3a-D9w"/>
+                            <constraint firstItem="nay-Ga-MFL" firstAttribute="leading" secondItem="5Le-iw-42R" secondAttribute="trailing" constant="33" id="t03-lF-JeB"/>
+                            <constraint firstItem="47h-kW-1kE" firstAttribute="centerY" secondItem="nay-Ga-MFL" secondAttribute="centerY" id="vST-VB-hCh"/>
+                            <constraint firstItem="5Le-iw-42R" firstAttribute="leading" secondItem="2AN-KA-EWX" secondAttribute="leading" constant="16" id="vZy-6y-etE"/>
+                            <constraint firstItem="d9k-EZ-vSb" firstAttribute="centerX" secondItem="2AN-KA-EWX" secondAttribute="centerX" id="vpE-dt-wZv"/>
                             <constraint firstItem="g2y-vx-EL9" firstAttribute="top" secondItem="Sex-S6-xqk" secondAttribute="bottom" constant="8" id="wiw-qO-gDg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2AN-KA-EWX"/>
                     </view>
+                    <connections>
+                        <outlet property="clockLabel" destination="Seu-nX-10V" id="Gdo-1a-Uag"/>
+                        <outlet property="eqVisualiserView" destination="g2y-vx-EL9" id="2nj-kx-cw3"/>
+                        <outlet property="instructionsLabel" destination="Sex-S6-xqk" id="eSb-55-rWk"/>
+                        <outlet property="microphoneView" destination="0Fi-fk-zzc" id="diB-Md-2n6"/>
+                        <outlet property="playButton" destination="5Le-iw-42R" id="koE-Pg-hvj"/>
+                        <outlet property="recordButton" destination="nay-Ga-MFL" id="z9R-Fb-rDJ"/>
+                        <outlet property="recordLabel" destination="d9k-EZ-vSb" id="gN5-tI-OpU"/>
+                        <outlet property="transcribeButton" destination="47h-kW-1kE" id="E6v-Ul-Tzc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqa-sT-aD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

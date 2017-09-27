@@ -9,12 +9,12 @@
 import UIKit
 import AVFoundation
 
-class RecordViewController: UIViewController, AVAudioRecorderDelegate {
+class RecordViewController: UIViewController{
     
-    var audioRecorder:AVAudioRecorder!
     var apiMockTimer: Timer!
     var stopWatch: StopWatch!
     var recordingIsPaused: Bool = false
+    var audioRecorder: AudioRecorder!
     var recordedAudio:RecordedAudio!
     
     @IBOutlet weak var microphoneView: UIView!
@@ -44,6 +44,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         recordButton.addTarget(self, action: #selector(pauseRecording), for: .touchUpOutside)
         stopWatch = StopWatch(label: clockLabel)
         recordingIsPaused = false
+        audioRecorder = AudioRecorder()
         
     }
     
@@ -95,10 +96,13 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func transcribeRecording(_ sender: Any) {
         updateUI(state: .transcribingAudio)
+        audioRecorder.stopRecording()
+        recordedAudio = audioRecorder.getRecording()
+        print(recordedAudio)
         callApi()
-        audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
+        performSegue(withIdentifier: "doTranscription", sender: nil)
     }
     
     @IBAction func playRecording(_ sender: Any) {
@@ -107,31 +111,13 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
 
     @objc func startRecording() {
         updateUI(state: .recording)
-        if recordingIsPaused == false {
-            let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-            let recordingName = "my_audio.wav"
-            let pathArray = [dirPath, recordingName]
-            let filePath = NSURL.fileURL(withPathComponents: pathArray)
-            let session = AVAudioSession.sharedInstance()
-            try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
-            try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
-            
-            audioRecorder.delegate = self
-            audioRecorder.isMeteringEnabled = true
-            audioRecorder.prepareToRecord()
-            audioRecorder.record()
-            updateUI(state: .recording)
-        } else {
-            audioRecorder.record()
-            recordingIsPaused = false
-            updateUI(state: .recording)
-        }
+        audioRecorder.recordAudio()
     }
     
     @objc func pauseRecording() {
-        audioRecorder.pause()
         updateUI(state: .inactiveWithPayload)
         recordingIsPaused = true
+        audioRecorder.pauseRecording()
     }
     
     func  callApi() {
@@ -142,16 +128,12 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         updateUI(state: .audioHasBeenTranscribed)
         
     }
-
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if(flag) {
-            recordedAudio = RecordedAudio(audioFilePathURL: recorder.url as NSURL, audioTitle: recorder.url.lastPathComponent)
-            print(recordedAudio.filePathURL)
-            print("recording was successful")
-            performSegue(withIdentifier: "showNotes", sender: nil)
-        } else {
-            print("Recording was not successful")
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController = segue.destination as! ViewNoteViewController
+        if let recording = self.recordedAudio {
+            destinationViewController.recordedAudio = recording
         }
     }
-    
+
 }

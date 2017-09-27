@@ -42,7 +42,7 @@ class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         let audioURL = Bundle.main.url(forResource: "patientNotesRecording", withExtension: "wav")
-//        recognizeFile(url: audioURL!)
+//        recognizeFile(url: audioURL!) 
         recognizeFile(url: recordedAudio.filePathURL as URL!)
     }
 

@@ -42,7 +42,7 @@
                                 <rect key="frame" x="131" y="518" width="58" height="30"/>
                                 <state key="normal" title="Go Back"/>
                                 <connections>
-                                    <segue destination="86b-vc-YjZ" kind="show" id="hef-Ce-VNc"/>
+                                    <segue destination="DVv-wC-BTL" kind="show" id="EWO-Qw-1t3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCo-cS-iKC">
@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9l-ta-vRu" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="-153"/>
+            <point key="canvasLocation" x="1256" y="-343"/>
         </scene>
         <!--Record View Controller-->
         <scene sceneID="Cdt-It-aSv">
@@ -101,12 +101,12 @@
                                     <action selector="playRecording:" destination="DVv-wC-BTL" eventType="touchUpInside" id="O55-Ah-QMM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nay-Ga-MFL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nay-Ga-MFL">
                                 <rect key="frame" x="123" y="449" width="74" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="vrr-cQ-vCh"/>
                                 </constraints>
-                                <state key="normal" title="Record"/>
+                                <state key="normal" title="Record" image="Round mic"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47h-kW-1kE">
                                 <rect key="frame" x="230" y="449" width="74" height="70"/>
@@ -136,10 +136,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Fi-fk-zzc">
-                                <rect key="frame" x="16" y="73" width="288" height="130.5"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBQ-yc-OzA">
                                 <rect key="frame" x="0.0" y="20" width="320" height="45"/>
                                 <subviews>
@@ -166,6 +162,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Faded mic" translatesAutoresizingMaskIntoConstraints="NO" id="jf0-Qs-Aye">
+                                <rect key="frame" x="16" y="73" width="288" height="131"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -176,20 +176,15 @@
                             <constraint firstItem="g2y-vx-EL9" firstAttribute="centerX" secondItem="brd-54-VpK" secondAttribute="centerX" id="Hyn-e6-BwM"/>
                             <constraint firstItem="Seu-nX-10V" firstAttribute="top" secondItem="g2y-vx-EL9" secondAttribute="bottom" constant="8" symbolic="YES" id="NZv-BD-0DC"/>
                             <constraint firstItem="g2y-vx-EL9" firstAttribute="centerY" secondItem="brd-54-VpK" secondAttribute="centerY" id="RRb-Gm-Nxz"/>
-                            <constraint firstItem="0Fi-fk-zzc" firstAttribute="leading" secondItem="2AN-KA-EWX" secondAttribute="leading" constant="16" id="TTS-w6-LpF"/>
                             <constraint firstItem="2AN-KA-EWX" firstAttribute="top" secondItem="lBQ-yc-OzA" secondAttribute="top" id="aJe-O7-BZY"/>
                             <constraint firstItem="g2y-vx-EL9" firstAttribute="leading" secondItem="2AN-KA-EWX" secondAttribute="leading" id="dtD-yE-ayt"/>
                             <constraint firstItem="2AN-KA-EWX" firstAttribute="trailing" secondItem="47h-kW-1kE" secondAttribute="trailing" constant="16" id="e6p-Hg-i4y"/>
-                            <constraint firstItem="Sex-S6-xqk" firstAttribute="top" secondItem="0Fi-fk-zzc" secondAttribute="bottom" constant="8" id="fgi-Ri-hFY"/>
                             <constraint firstItem="5Le-iw-42R" firstAttribute="centerY" secondItem="nay-Ga-MFL" secondAttribute="centerY" id="gK1-vB-HE8"/>
-                            <constraint firstItem="0Fi-fk-zzc" firstAttribute="centerX" secondItem="2AN-KA-EWX" secondAttribute="centerX" id="iUa-qU-o60"/>
                             <constraint firstItem="2AN-KA-EWX" firstAttribute="trailing" secondItem="lBQ-yc-OzA" secondAttribute="trailing" id="kdr-gu-39l"/>
-                            <constraint firstItem="0Fi-fk-zzc" firstAttribute="top" secondItem="lBQ-yc-OzA" secondAttribute="bottom" constant="8" symbolic="YES" id="leJ-nm-3QJ"/>
                             <constraint firstItem="lBQ-yc-OzA" firstAttribute="leading" secondItem="2AN-KA-EWX" secondAttribute="leading" id="m8g-aO-i7C"/>
                             <constraint firstItem="nay-Ga-MFL" firstAttribute="width" secondItem="5Le-iw-42R" secondAttribute="width" id="miy-cL-9uE"/>
                             <constraint firstItem="47h-kW-1kE" firstAttribute="width" secondItem="5Le-iw-42R" secondAttribute="width" id="nnd-Pr-D6q"/>
                             <constraint firstItem="d9k-EZ-vSb" firstAttribute="top" secondItem="nay-Ga-MFL" secondAttribute="bottom" constant="8" id="oqA-1V-m6y"/>
-                            <constraint firstItem="2AN-KA-EWX" firstAttribute="trailing" secondItem="0Fi-fk-zzc" secondAttribute="trailing" constant="16" id="rJP-Qb-PNE"/>
                             <constraint firstItem="Sex-S6-xqk" firstAttribute="centerX" secondItem="2AN-KA-EWX" secondAttribute="centerX" id="rjh-D4-PiA"/>
                             <constraint firstItem="nay-Ga-MFL" firstAttribute="leading" secondItem="5Le-iw-42R" secondAttribute="trailing" constant="33" id="t03-lF-JeB"/>
                             <constraint firstItem="47h-kW-1kE" firstAttribute="centerY" secondItem="nay-Ga-MFL" secondAttribute="centerY" id="vST-VB-hCh"/>
@@ -203,7 +198,6 @@
                         <outlet property="clockLabel" destination="Seu-nX-10V" id="Gdo-1a-Uag"/>
                         <outlet property="eqVisualiserView" destination="g2y-vx-EL9" id="2nj-kx-cw3"/>
                         <outlet property="instructionsLabel" destination="Sex-S6-xqk" id="eSb-55-rWk"/>
-                        <outlet property="microphoneView" destination="0Fi-fk-zzc" id="diB-Md-2n6"/>
                         <outlet property="playButton" destination="5Le-iw-42R" id="koE-Pg-hvj"/>
                         <outlet property="recordButton" destination="nay-Ga-MFL" id="z9R-Fb-rDJ"/>
                         <outlet property="recordLabel" destination="d9k-EZ-vSb" id="gN5-tI-OpU"/>
@@ -213,88 +207,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqa-sT-aD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="-179"/>
-        </scene>
-        <!--Record-->
-        <scene sceneID="q8w-gb-5qR">
-            <objects>
-                <viewController id="86b-vc-YjZ" customClass="RecordSoundsViewController" customModule="VoiceRecognitionFromFile" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8Wf-yd-jzg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stW-JU-3cG">
-                                <rect key="frame" x="135.5" y="20" width="49" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="EyY-jP-6BF"/>
-                                </constraints>
-                                <state key="normal" title="Record"/>
-                                <connections>
-                                    <action selector="recordAudioWithSender:" destination="86b-vc-YjZ" eventType="touchUpInside" id="8fh-Kn-agQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wf-wy-FcX">
-                                <rect key="frame" x="135.5" y="128" width="49" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="t4J-ZV-W9Z"/>
-                                </constraints>
-                                <state key="normal" title="Stop"/>
-                                <connections>
-                                    <action selector="stopRecordingWithSender:" destination="86b-vc-YjZ" eventType="touchUpInside" id="8Og-gj-VDM"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording in Progress..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLA-vo-voO">
-                                <rect key="frame" x="69" y="236" width="182" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="jDY-Hd-7MQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bc8-DF-jXI">
-                                <rect key="frame" x="139" y="344" width="42" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="EHe-0i-obg"/>
-                                </constraints>
-                                <state key="normal" title="Pause"/>
-                                <connections>
-                                    <action selector="pauseRecordingWithSender:" destination="86b-vc-YjZ" eventType="touchUpInside" id="YZc-6K-4tp"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="stW-JU-3cG" firstAttribute="leading" secondItem="6wf-wy-FcX" secondAttribute="leading" id="5AA-zK-jH6"/>
-                            <constraint firstItem="6wf-wy-FcX" firstAttribute="top" secondItem="stW-JU-3cG" secondAttribute="bottom" constant="8" symbolic="YES" id="Giy-xl-Iby"/>
-                            <constraint firstItem="LLA-vo-voO" firstAttribute="top" secondItem="6wf-wy-FcX" secondAttribute="bottom" constant="8" id="QJI-c2-jFJ"/>
-                            <constraint firstItem="bc8-DF-jXI" firstAttribute="top" secondItem="LLA-vo-voO" secondAttribute="bottom" constant="8" id="cbQ-qr-aFI"/>
-                            <constraint firstItem="bc8-DF-jXI" firstAttribute="centerX" secondItem="Aou-I8-amJ" secondAttribute="centerX" id="ehF-Zk-Joc"/>
-                            <constraint firstItem="6wf-wy-FcX" firstAttribute="centerX" secondItem="Aou-I8-amJ" secondAttribute="centerX" id="gAT-AL-DP4"/>
-                            <constraint firstItem="stW-JU-3cG" firstAttribute="top" secondItem="Aou-I8-amJ" secondAttribute="top" id="iJU-T2-nqO"/>
-                            <constraint firstItem="LLA-vo-voO" firstAttribute="centerX" secondItem="Aou-I8-amJ" secondAttribute="centerX" id="lW5-CJ-jsV"/>
-                            <constraint firstItem="stW-JU-3cG" firstAttribute="centerX" secondItem="8Wf-yd-jzg" secondAttribute="centerX" id="n7w-bp-cC2"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Aou-I8-amJ"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Record" id="LH9-fI-dPW"/>
-                    <connections>
-                        <outlet property="pauseButton" destination="bc8-DF-jXI" id="oCE-q5-1uw"/>
-                        <outlet property="recordButton" destination="stW-JU-3cG" id="am9-iz-BaL"/>
-                        <outlet property="recordingInProgress" destination="LLA-vo-voO" id="gYC-RS-atj"/>
-                        <outlet property="stopButton" destination="6wf-wy-FcX" id="bN9-2w-loU"/>
-                        <segue destination="MQe-5y-Es0" kind="presentation" identifier="showNotes" id="2rZ-XA-x3b"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lya-ib-4GX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="54" y="642"/>
+            <point key="canvasLocation" x="-26.25" y="-343.3098591549296"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Faded mic" width="66" height="88"/>
         <image name="Image-1" width="100" height="100"/>
+        <image name="Round mic" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="eij-zd-Zxd"/>
-    </inferredMetricsTieBreakers>
 </document>

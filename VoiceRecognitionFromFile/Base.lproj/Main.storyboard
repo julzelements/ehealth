@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DVv-wC-BTL">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -25,11 +25,11 @@
                         <viewControllerLayoutGuide type="bottom" id="9fW-MR-dWL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Y6-wy-KdW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e5W-Gh-BEQ">
-                                <rect key="frame" x="16" y="20" width="288" height="282"/>
+                                <rect key="frame" x="16" y="20" width="343" height="282"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="282" id="SQa-Wm-i1Y"/>
@@ -39,21 +39,21 @@
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ieq-Yv-LoS">
-                                <rect key="frame" x="131" y="518" width="58" height="30"/>
+                                <rect key="frame" x="158.5" y="617" width="58" height="30"/>
                                 <state key="normal" title="Go Back"/>
                                 <connections>
                                     <segue destination="DVv-wC-BTL" kind="show" id="EWO-Qw-1t3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCo-cS-iKC">
-                                <rect key="frame" x="127" y="361" width="66" height="30"/>
+                                <rect key="frame" x="154.5" y="460" width="66" height="30"/>
                                 <state key="normal" title="Play Note"/>
                                 <connections>
                                     <action selector="playbackNote:" destination="MQe-5y-Es0" eventType="touchUpInside" id="eUk-h5-HtE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Stamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dS-eO-Gxn">
-                                <rect key="frame" x="114" y="489" width="92" height="21"/>
+                                <rect key="frame" x="141.5" y="588" width="92" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -88,59 +88,59 @@
             <objects>
                 <viewController id="DVv-wC-BTL" customClass="RecordViewController" customModule="VoiceRecognitionFromFile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="brd-54-VpK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Le-iw-42R">
-                                <rect key="frame" x="16" y="449" width="74" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Le-iw-42R">
+                                <rect key="frame" x="16" y="548" width="92.5" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="lLe-B8-0HK"/>
                                 </constraints>
-                                <state key="normal" title="Play"/>
+                                <state key="normal" image="Play"/>
                                 <connections>
                                     <action selector="playRecording:" destination="DVv-wC-BTL" eventType="touchUpInside" id="O55-Ah-QMM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nay-Ga-MFL">
-                                <rect key="frame" x="123" y="449" width="74" height="70"/>
+                                <rect key="frame" x="141.5" y="548" width="92" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="vrr-cQ-vCh"/>
                                 </constraints>
-                                <state key="normal" title="Record" image="Round mic"/>
+                                <state key="normal" image="Round mic"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47h-kW-1kE">
-                                <rect key="frame" x="230" y="449" width="74" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47h-kW-1kE">
+                                <rect key="frame" x="266.5" y="548" width="92.5" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="i0A-EP-S39"/>
                                 </constraints>
-                                <state key="normal" title="Stop"/>
+                                <state key="normal" image="Stop"/>
                                 <connections>
                                     <action selector="transcribeRecording:" destination="DVv-wC-BTL" eventType="touchUpInside" id="iG1-5m-gWD"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="g2y-vx-EL9">
-                                <rect key="frame" x="0.0" y="234" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="283.5" width="375" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Ctk-0q-aPQ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Seu-nX-10V">
-                                <rect key="frame" x="61.5" y="342" width="197" height="46.5"/>
+                                <rect key="frame" x="89" y="391.5" width="197" height="46.5"/>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="41"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold the button to record" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sex-S6-xqk">
-                                <rect key="frame" x="88" y="211.5" width="144" height="14.5"/>
+                                <rect key="frame" x="115.5" y="261" width="144" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBQ-yc-OzA">
-                                <rect key="frame" x="0.0" y="20" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record a Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nq-ek-c5J">
-                                        <rect key="frame" x="105" y="12" width="110" height="21"/>
+                                        <rect key="frame" x="132.5" y="12" width="110" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -154,7 +154,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9k-EZ-vSb">
-                                <rect key="frame" x="133" y="527" width="55" height="21"/>
+                                <rect key="frame" x="160" y="626" width="55" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="vnr-fI-glk"/>
                                 </constraints>
@@ -213,6 +213,8 @@
     <resources>
         <image name="Faded mic" width="66" height="88"/>
         <image name="Image-1" width="100" height="100"/>
-        <image name="Round mic" width="30" height="30"/>
+        <image name="Play" width="33" height="42"/>
+        <image name="Round mic" width="60" height="60"/>
+        <image name="Stop" width="36" height="36"/>
     </resources>
 </document>

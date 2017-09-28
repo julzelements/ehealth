@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import AudioKit
+import AudioKitUI
 
 class RecordViewController: UIViewController{
     
@@ -16,6 +18,8 @@ class RecordViewController: UIViewController{
     var recordingIsPaused: Bool = false
     var audioRecorder: AudioRecorder!
     var recordedAudio:RecordedAudio!
+    var tracker : AKFrequencyTracker!
+    let mic = AKMicrophone()
     
     @IBOutlet weak var microphoneView: UIView!
     @IBOutlet weak var instructionsLabel: UILabel!
@@ -25,7 +29,8 @@ class RecordViewController: UIViewController{
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var recordLabel: UILabel!
-
+    @IBOutlet weak var audioInputPlot: UIView!
+    
     enum State {
         case recording
         case inactiveNoPayload
@@ -46,10 +51,24 @@ class RecordViewController: UIViewController{
         recordingIsPaused = false
         audioRecorder = AudioRecorder()
         
+        AKAudioFile.cleanTempDirectory()
+        AKSettings.bufferLength = .medium
+        let plot = AKNodeOutputPlot(mic, frame: audioInputPlot.bounds)
+        plot.plotType = .rolling
+        plot.shouldFill = true
+        plot.color = UIColor.blue
+        print(plot)
+        audioInputPlot.addSubview(plot)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         updateUI(state: .inactiveNoPayload)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tracker = AKFrequencyTracker.init(mic, hopSize: 512, peakCount: 20)
+        AudioKit.output = AKBooster(tracker, gain: 0)
+        AudioKit.start()
     }
     
     func updateUI(state: State) {
@@ -67,6 +86,7 @@ class RecordViewController: UIViewController{
             recordButton.setTitle("pause", for: .normal)
             stopButton.isEnabled = false
             stopWatch.startRecording()
+            tracker.start()
         case .transcribingAudio:
             recordLabel.text = "transcribingAudio"
             playButton.isEnabled = false
@@ -84,6 +104,7 @@ class RecordViewController: UIViewController{
             instructionsLabel.text = "Press rec to continue recording\nPress Transcribe to transcribe audio"
             stopButton.isEnabled = true
             stopWatch.stopRecording()
+            tracker.stop()
         case .audioHasBeenTranscribed:
             recordLabel.text = "inactiveWithPayload"
             instructionsLabel.text = "Audio has been transcribed"

@@ -8,15 +8,19 @@
 
 import UIKit
 import AVFoundation
-
+import AudioKit
+import AudioKitUI
 
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBOutlet weak var displayResults: UILabel!
+    @IBOutlet var audioInputPlot: AKNodeOutputPlot!
     var audioRecorder:AVAudioRecorder!
     var recordedAudio:RecordedAudio!
     var recordingIsPaused: Bool = false
     var testString: String!
+    var tracker : AKFrequencyTracker!
+    let mic = AKMicrophone()
     
     enum DisplayState {
         case notRecording
@@ -47,7 +51,18 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        AKAudioFile.cleanTempDirectory()
+        AKSettings.bufferLength = .medium
+        let plot = AKNodeOutputPlot(mic, frame: audioInputPlot.bounds)
+        plot.plotType = .rolling
+        plot.shouldFill = true
+        plot.color = UIColor.blue
+        audioInputPlot.addSubview(plot)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tracker = AKFrequencyTracker.init(mic, hopSize: 512, peakCount: 20)
     }
     
     @IBOutlet weak var recordButton: UIButton!

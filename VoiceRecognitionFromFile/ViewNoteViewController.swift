@@ -20,6 +20,9 @@ class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
     var audioEngine: AVAudioEngine!
     var audioFile: AVAudioFile!
     
+    var loadingFrame : UIView! = UIView()
+    var loadingDescription : UITextView = UITextView()
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
     
     @IBOutlet var textView : UITextView!
@@ -41,8 +44,8 @@ class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let audioURL = Bundle.main.url(forResource: "patientNotesRecording", withExtension: "wav")
-//        recognizeFile(url: audioURL!) 
+//        let audioURL = Bundle.main.url(forResource: "patientNotesRecording", withExtension: "wav")
+//        recognizeFile(url: audioURL!)
         recognizeFile(url: recordedAudio.filePathURL as URL!)
     }
 
@@ -68,6 +71,7 @@ class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
                 self.result = result
                 let formattedText = self.formatResult(result: result)
                 self.textView.attributedText = formattedText
+                self.stopActivityIndicator()
                 print(formattedText)
                 print("recognition complete")
                 print(result)
@@ -125,10 +129,13 @@ class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
              */
             OperationQueue.main.addOperation {
 
-                }
             }
         }
+        showActivityIndicator()
+    }
+    
     @IBAction func playbackNote(_ sender: Any) {
+        print("Playing back note")
         stopAll()
         playAtSpeed(speed: 1.0)
     }
@@ -153,6 +160,26 @@ class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
         return (dateFormatter.string(from: date))
     }
     
+    func showActivityIndicator() {
+        print("Show activity indicator")
+        loadingFrame.frame = CGRect(x: textView.frame.midX - 60, y: textView.frame.midY - 40 , width: 120, height: 80)
+        loadingFrame.layer.cornerRadius = 15
+        loadingFrame.backgroundColor = UIColor(white: 0, alpha: 0.7)
+        loadingDescription.text = "Transcribing Audio..."
+        loadingDescription.textColor = UIColor.white
+        loadingDescription.backgroundColor = UIColor(white: 0,alpha: 0)
+        loadingDescription.frame = CGRect(x: (loadingFrame.frame.width/2) - (120/2), y: 50, width: 120, height: 50)
+        activityIndicator.frame = CGRect(x: (loadingFrame.frame.width/2) - (50/2), y: 0, width: 50, height: 50)
+        activityIndicator.startAnimating()
+        loadingFrame.addSubview(activityIndicator)
+        loadingFrame.addSubview(loadingDescription)
+        textView.addSubview(loadingFrame)
     }
+    
+    func stopActivityIndicator() {
+        activityIndicator.stopAnimating()
+        loadingFrame.removeFromSuperview()
+    }
+}
 
 

@@ -29,31 +29,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e5W-Gh-BEQ">
-                                <rect key="frame" x="16" y="20" width="343" height="282"/>
+                                <rect key="frame" x="16" y="20" width="343" height="474"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="282" id="SQa-Wm-i1Y"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ieq-Yv-LoS">
-                                <rect key="frame" x="158.5" y="617" width="58" height="30"/>
-                                <state key="normal" title="Go Back"/>
+                                <rect key="frame" x="125" y="619" width="125" height="28"/>
+                                <color key="backgroundColor" red="0.89698648452758789" green="0.22214406728744507" blue="0.20931363105773926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <state key="normal" title="New Recording">
+                                    <color key="titleColor" red="1" green="0.96867338588295437" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="DVv-wC-BTL" kind="show" id="EWO-Qw-1t3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCo-cS-iKC">
-                                <rect key="frame" x="154.5" y="460" width="66" height="30"/>
-                                <state key="normal" title="Play Note"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCo-cS-iKC">
+                                <rect key="frame" x="157.5" y="519" width="60" height="60"/>
+                                <state key="normal" image="Play Round"/>
                                 <connections>
                                     <action selector="playbackNote:" destination="MQe-5y-Es0" eventType="touchUpInside" id="eUk-h5-HtE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Stamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dS-eO-Gxn">
-                                <rect key="frame" x="141.5" y="588" width="92" height="21"/>
+                                <rect key="frame" x="141.5" y="590" width="92" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -66,7 +67,8 @@
                             <constraint firstItem="e5W-Gh-BEQ" firstAttribute="top" secondItem="sXc-6O-ZQU" secondAttribute="bottom" id="ZXv-WK-Mk7"/>
                             <constraint firstItem="Ieq-Yv-LoS" firstAttribute="centerX" secondItem="fAQ-d2-wB8" secondAttribute="centerX" id="cvN-qL-k2O"/>
                             <constraint firstItem="iCo-cS-iKC" firstAttribute="centerX" secondItem="fAQ-d2-wB8" secondAttribute="centerX" id="g5f-K3-UO3"/>
-                            <constraint firstItem="Ieq-Yv-LoS" firstAttribute="top" secondItem="iCo-cS-iKC" secondAttribute="bottom" constant="127" id="orp-m9-EwQ"/>
+                            <constraint firstItem="iCo-cS-iKC" firstAttribute="top" secondItem="e5W-Gh-BEQ" secondAttribute="bottom" constant="25" id="gho-Tz-63u"/>
+                            <constraint firstItem="Ieq-Yv-LoS" firstAttribute="top" secondItem="iCo-cS-iKC" secondAttribute="bottom" constant="40" id="orp-m9-EwQ"/>
                             <constraint firstItem="Ieq-Yv-LoS" firstAttribute="top" secondItem="1dS-eO-Gxn" secondAttribute="bottom" constant="8" symbolic="YES" id="uzc-uh-b3M"/>
                             <constraint firstItem="1dS-eO-Gxn" firstAttribute="centerX" secondItem="Ieq-Yv-LoS" secondAttribute="centerX" id="wO2-BH-Ogd"/>
                             <constraint firstItem="e5W-Gh-BEQ" firstAttribute="trailing" secondItem="2Y6-wy-KdW" secondAttribute="trailingMargin" id="zML-Zo-1QB"/>
@@ -215,6 +217,7 @@
         <image name="Faded mic" width="66" height="88"/>
         <image name="Image-1" width="100" height="100"/>
         <image name="Play" width="33" height="42"/>
+        <image name="Play Round" width="60" height="60"/>
         <image name="Round mic" width="60" height="60"/>
         <image name="Stop" width="36" height="36"/>
     </resources>

@@ -162,7 +162,7 @@ class ViewNoteViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     func showActivityIndicator() {
         print("Show activity indicator")
-        loadingFrame.frame = CGRect(x: textView.frame.midX - 60, y: textView.frame.midY - 40 , width: 120, height: 80)
+        loadingFrame.frame = CGRect(x: textView.frame.midX - 80, y: textView.frame.midY, width: 120, height: 80)
         loadingFrame.layer.cornerRadius = 15
         loadingFrame.backgroundColor = UIColor(white: 0, alpha: 0.7)
         loadingDescription.text = "Transcribing Audio..."

@@ -56,6 +56,7 @@ class RecordViewController: UIViewController{
         let plot = AKNodeOutputPlot(mic, frame: audioInputPlot.bounds)
         plot.plotType = .rolling
         plot.shouldFill = true
+        plot.shouldMirror = true
         plot.color = UIColor.blue
         print(plot)
         audioInputPlot.addSubview(plot)
@@ -66,9 +67,8 @@ class RecordViewController: UIViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        tracker = AKFrequencyTracker.init(mic, hopSize: 512, peakCount: 20)
+        tracker = AKFrequencyTracker.init(mic, hopSize: 128, peakCount: 64)
         AudioKit.output = AKBooster(tracker, gain: 0)
-        AudioKit.start()
     }
     
     func updateUI(state: State) {
@@ -87,6 +87,7 @@ class RecordViewController: UIViewController{
             stopButton.isEnabled = false
             stopWatch.startRecording()
             tracker.start()
+            AudioKit.start()
         case .transcribingAudio:
             recordLabel.text = "transcribingAudio"
             playButton.isEnabled = false
@@ -105,6 +106,7 @@ class RecordViewController: UIViewController{
             stopButton.isEnabled = true
             stopWatch.stopRecording()
             tracker.stop()
+            AudioKit.stop()
         case .audioHasBeenTranscribed:
             recordLabel.text = "inactiveWithPayload"
             instructionsLabel.text = "Audio has been transcribed"
